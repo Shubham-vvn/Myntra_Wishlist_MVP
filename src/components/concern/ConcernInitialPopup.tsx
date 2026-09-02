@@ -73,7 +73,7 @@ export const ConcernInitialPopup: React.FC = () => {
           marginBottom: '8px',
           maxWidth: '300px'
         }}>
-          Want to get notified when your concern is resolved?
+          What would make you buy this? 👀
         </h3>
 
         {/* Subtitle */}
@@ -82,7 +82,7 @@ export const ConcernInitialPopup: React.FC = () => {
           color: 'var(--myntra-text-secondary)',
           marginBottom: '24px'
         }}>
-          We'll notify you when there's an update.
+          We’ll keep an eye on it so you don’t have to.
         </p>
 
         {/* Primary CTA: YES, NOTIFY ME */}
