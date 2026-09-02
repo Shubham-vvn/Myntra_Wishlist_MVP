@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAppStore } from '../../store/appStore';
 import { CheckCircle2, X } from 'lucide-react';
 
 export const WishlistToast: React.FC = () => {
   const store = useAppStore();
   const { isOpen } = store.wishlistToast;
+
+  // Auto-dismiss after 3 seconds
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        store.closeWishlistToast();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, store]);
 
   if (!isOpen) return null;
 
