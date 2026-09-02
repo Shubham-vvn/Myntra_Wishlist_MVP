@@ -11,6 +11,7 @@ import {
   SimulationType 
 } from '../types';
 import { INITIAL_PRODUCTS, DEMO_USER_PROFILE } from '../data/mockCatalog';
+import { generateCategoryNotification, getWishlistWatchBadge, getCategoryArchetype } from '../utils/categoryNotificationConfig';
 import confetti from 'canvas-confetti';
 
 interface ConcernModalState {
@@ -124,12 +125,69 @@ class AppStore {
 
   public notifications: NotificationItem[] = [
     {
-      id: 'notif-init-1',
-      title: 'Welcome to Myntra Wishlist',
-      body: 'Tell us why you postpone buying and we will notify you when that exact concern is resolved.',
-      concernType: 'quality_info',
-      timestamp: '2h ago',
+      id: 'notif-watch-1',
+      productId: 'prod-29',
+      brandName: 'Fossil',
+      productName: 'Men Grant Chronograph Watch',
+      productImage: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80',
+      categoryChip: '⌚ Horology Watch Alert',
+      title: 'Dial Size In Stock: 44mm Case Diameter ⌚',
+      body: 'Fossil Grant Chronograph is now available in 44mm dial with 2-year official brand warranty registered.',
+      concernType: 'size',
+      timestamp: '15m ago',
       isRead: false
+    },
+    {
+      id: 'notif-shoe-1',
+      productId: 'prod-7',
+      brandName: 'Puma',
+      productName: 'Men Retaliate 2 Running Shoes',
+      productImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
+      categoryChip: '👟 Footwear Restock Alert',
+      title: 'Shoe Size Restocked: UK 9 Available! 👟',
+      body: 'Puma Men Running Shoes in size UK 9 are back in stock (4 pairs left). 18 verified runners rated arch cushioning 4.8/5.',
+      concernType: 'size',
+      timestamp: '1h ago',
+      isRead: false
+    },
+    {
+      id: 'notif-bag-1',
+      productId: 'prod-13',
+      brandName: 'Mango',
+      productName: 'Women Structured Leather Tote Bag',
+      productImage: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
+      categoryChip: '👜 Handbag Dimension Alert',
+      title: 'Laptop Fit & Capacity Photos Verified 💻',
+      body: 'Verified photos uploaded: Easily accommodates 14" MacBook & 11" iPad with padded protection & reinforced gold-tone zips.',
+      concernType: 'quality_info',
+      timestamp: '3h ago',
+      isRead: false
+    },
+    {
+      id: 'notif-saree-1',
+      productId: 'prod-12',
+      brandName: 'Anouk',
+      productName: 'Pure Banarasi Woven Zari Saree',
+      productImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+      categoryChip: '🥻 Saree Drape Verified',
+      title: 'Daylight Drape & Blouse Piece Photos Uploaded 🥻',
+      body: '14 high-resolution daylight drape photos added. 0.8m unstitched matching blouse piece with genuine Zari border verified.',
+      concernType: 'quality_info',
+      timestamp: '5h ago',
+      isRead: false
+    },
+    {
+      id: 'notif-denim-1',
+      productId: 'prod-6',
+      brandName: "Levi's",
+      productName: "Men 511 Slim Fit Flex Jeans",
+      productImage: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80',
+      categoryChip: '👖 Denim Waist Alert',
+      title: 'Denim Size Restocked: Waist 32 Available 👖',
+      body: "Levi's 511 Slim Fit Jeans in Waist 32 (32 Inseam) are back in stock. 94% stretch retention after 10 washes verified.",
+      concernType: 'size',
+      timestamp: '1d ago',
+      isRead: true
     }
   ];
 
@@ -273,31 +331,28 @@ class AppStore {
     if (!productId || !selectedConcern) return;
 
     const wishItem = this.wishlist.find(w => w.productId === productId);
-    let label = 'Watching concern';
-    let confirmationMsg = 'We will notify you when this happens.';
+    const product = this.products.find(p => p.id === productId);
 
-    if (selectedConcern === 'size') {
-      label = `Watching: Size ${params.targetSize || 'XL'}`;
-      confirmationMsg = `We'll notify you when ${params.targetSize || 'XL'} size is available.`;
-    } else if (selectedConcern === 'price') {
-      label = `Watching: Price Drop`;
-      confirmationMsg = `We'll notify you when the price drops below current price.`;
-    } else if (selectedConcern === 'colour') {
-      label = `Watching: Color ${params.targetColor || 'Variant'}`;
-      confirmationMsg = `We'll notify you when ${params.targetColor || 'your preferred color'} is back in stock.`;
-    } else if (selectedConcern === 'delivery') {
-      label = `Watching: Faster Express Delivery`;
-      confirmationMsg = `We'll notify you when 24hr express delivery is available.`;
-    } else if (selectedConcern === 'quality_info') {
-      label = `Watching: Verified Reviews & Photos`;
-      confirmationMsg = `We'll notify you when new customer photos & weave ratings are added.`;
-    } else if (selectedConcern === 'purchase_timing') {
-      label = `Remind on ${params.dateLabel || 'Target Date'}`;
-      confirmationMsg = `We'll send you a gentle reminder on ${params.dateLabel || 'your chosen date'}.`;
-    } else {
-      label = `Watching: Custom Feedback`;
-      confirmationMsg = `We've saved your note and will notify you when updated.`;
-    }
+    const generated = product 
+      ? generateCategoryNotification(product, selectedConcern, params)
+      : null;
+
+    const label = (product && wishItem)
+      ? getWishlistWatchBadge({
+          id: 'temp',
+          wishlistItemId: wishItem.id,
+          productId,
+          concernType: selectedConcern,
+          label: '',
+          triggerParams: params,
+          status: 'active',
+          capturedAt: 'Just now'
+        }, product)
+      : 'Watching concern';
+
+    const confirmationMsg = generated 
+      ? generated.body 
+      : 'We will notify you as soon as this update is available.';
 
     if (wishItem) {
       wishItem.activeConcern = {
@@ -306,6 +361,7 @@ class AppStore {
         productId,
         concernType: selectedConcern,
         label,
+        categoryChip: generated?.categoryChip,
         triggerParams: params,
         status: 'active',
         capturedAt: 'Just now'
@@ -325,10 +381,40 @@ class AppStore {
   }
 
   public completeConcernFlow() {
-    // Step 6 "DONE" button
+    const { productId, selectedConcern, tempTriggerParams } = this.concernModal;
     this.concernModal.isOpen = false;
     this.closeWishlistToast();
     this.notify();
+
+    // Trigger realistic category-intelligent simulated push notification banner for this exact item
+    if (productId && selectedConcern) {
+      const prod = this.products.find(p => p.id === productId);
+      const wishItem = this.wishlist.find(w => w.productId === productId);
+      const currentParams = wishItem?.activeConcern?.triggerParams || tempTriggerParams || {};
+
+      setTimeout(() => {
+        if (prod) {
+          const generated = generateCategoryNotification(prod, selectedConcern, currentParams);
+          const pushNotif: NotificationItem = {
+            id: `notif-${Date.now()}`,
+            productId: prod.id,
+            brandName: prod.brand,
+            productName: prod.name,
+            productImage: prod.images[0],
+            categoryChip: generated.categoryChip,
+            title: generated.title,
+            body: generated.body,
+            concernType: selectedConcern,
+            timestamp: 'Just now',
+            isRead: false
+          };
+          this.activePushBanner = pushNotif;
+          this.notifications = [pushNotif, ...this.notifications];
+          this.logEvent('notification_sent', { productId: prod.id, concern: selectedConcern });
+          this.notify();
+        }
+      }, 2200);
+    }
   }
 
   // Layer B: Pre-Purchase Confidence Bridge

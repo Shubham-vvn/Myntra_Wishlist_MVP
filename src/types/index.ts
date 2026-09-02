@@ -75,12 +75,42 @@ export interface CustomerReview {
   photoUrl?: string;
 }
 
+export type ProductCategory = 
+  | 'Shirts' 
+  | 'Kurtas' 
+  | 'Blazers' 
+  | 'Dresses' 
+  | 'Festive' 
+  | 'Jeans' 
+  | 'Footwear' 
+  | 'Tops' 
+  | 'Trousers' 
+  | 'T-Shirts' 
+  | 'Jackets' 
+  | 'Sarees' 
+  | 'Handbags' 
+  | 'Activewear'
+  | 'Watches'
+  | 'Sandals';
+
+export type CategoryArchetype = 
+  | 'footwear' 
+  | 'watches' 
+  | 'bags' 
+  | 'denim' 
+  | 'ethnic' 
+  | 'topwear' 
+  | 'dresses' 
+  | 'outerwear' 
+  | 'activewear' 
+  | 'general';
+
 export interface Product {
   id: string;
   sku: string;
   brand: string;
   name: string;
-  category: 'Shirts' | 'Kurtas' | 'Blazers' | 'Dresses' | 'Festive' | 'Jeans' | 'Footwear' | 'Tops' | 'Trousers' | 'T-Shirts' | 'Jackets' | 'Sarees' | 'Handbags' | 'Activewear';
+  category: ProductCategory;
   price: number;
   mrp: number;
   discountPct: number;
@@ -108,8 +138,13 @@ export interface ActiveConcern {
   productId: string;
   concernType: ConcernType;
   label: string;
+  categoryChip?: string;
   triggerParams: {
     targetSize?: string;
+    targetShoeSize?: string;
+    targetWaistSize?: string;
+    targetDialSize?: string;
+    laptopFitRequired?: string;
     targetPrice?: number;
     capturedPrice?: number;
     targetColor?: string;
@@ -117,6 +152,9 @@ export interface ActiveConcern {
     dateLabel?: string;
     customText?: string;
     notificationPreference?: string;
+    warrantyAlert?: boolean;
+    opacityPhotosOnly?: boolean;
+    drapePhotosVerified?: boolean;
   };
   status: 'active' | 'satisfied' | 'notified' | 'dismissed';
   capturedAt: string;
@@ -138,6 +176,7 @@ export interface NotificationItem {
   productName?: string;
   brandName?: string;
   productImage?: string;
+  categoryChip?: string;
   title: string;
   body: string;
   concernType: ConcernType;

@@ -114,6 +114,20 @@ export const LockscreenPushBanner: React.FC = () => {
         )}
 
         <div style={{ flex: 1 }}>
+          {banner.categoryChip && (
+            <div style={{
+              display: 'inline-block',
+              fontSize: '9px',
+              fontWeight: 800,
+              color: 'var(--myntra-pink)',
+              backgroundColor: 'var(--myntra-pink-soft)',
+              padding: '1px 6px',
+              borderRadius: '8px',
+              marginBottom: '3px'
+            }}>
+              {banner.categoryChip}
+            </div>
+          )}
           <div style={{ fontSize: '13px', fontWeight: 800, color: 'var(--myntra-navy)' }}>
             {banner.title}
           </div>

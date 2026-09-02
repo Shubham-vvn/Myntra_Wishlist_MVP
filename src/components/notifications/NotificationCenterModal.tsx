@@ -185,6 +185,20 @@ export const NotificationCenterModal: React.FC = () => {
                 )}
 
                 <div style={{ flex: 1 }}>
+                  {notif.categoryChip && (
+                    <div style={{
+                      display: 'inline-block',
+                      fontSize: '9px',
+                      fontWeight: 800,
+                      color: 'var(--myntra-pink)',
+                      backgroundColor: 'var(--myntra-pink-soft)',
+                      padding: '1px 6px',
+                      borderRadius: '8px',
+                      marginBottom: '3px'
+                    }}>
+                      {notif.categoryChip}
+                    </div>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--myntra-navy)' }}>
                       {notif.title}
@@ -193,9 +207,9 @@ export const NotificationCenterModal: React.FC = () => {
                       {notif.timestamp}
                     </span>
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--myntra-text-secondary)', marginTop: '2px', lineHeight: '1.3' }}>
+                  <p style={{ fontSize: '11px', color: 'var(--myntra-text-secondary)', marginTop: '2px', lineHeight: '1.35' }}>
                     {notif.body}
-                  </div>
+                  </p>
                 </div>
               </div>
             );

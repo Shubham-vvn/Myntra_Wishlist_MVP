@@ -14,6 +14,8 @@ export const HomePage: React.FC = () => {
     'Dresses', 
     'Festive', 
     'Jeans', 
+    'Watches',
+    'Sandals',
     'T-Shirts', 
     'Trousers', 
     'Jackets', 

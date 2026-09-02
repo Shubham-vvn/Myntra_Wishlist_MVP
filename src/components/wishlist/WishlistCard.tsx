@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppStore } from '../../store/appStore';
 import { WishlistItem } from '../../types';
+import { getWishlistWatchBadge } from '../../utils/categoryNotificationConfig';
 import { X, ShieldCheck, Sparkles, ShoppingBag, Bell } from 'lucide-react';
 
 interface WishlistCardProps {
@@ -178,7 +179,7 @@ export const WishlistCard: React.FC<WishlistCardProps> = ({ item }) => {
           >
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
               <Bell size={11} strokeWidth={2.5} />
-              {activeConcern.label}
+              {activeConcern.label || getWishlistWatchBadge(activeConcern, product)}
             </span>
             <span style={{ fontSize: '9px', fontWeight: 600, color: 'var(--myntra-text-muted)' }}>
               Edit

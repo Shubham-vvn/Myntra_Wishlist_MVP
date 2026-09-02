@@ -1637,5 +1637,208 @@ export const INITIAL_PRODUCTS: Product[] = [
     swapEligible: true,
     deliveryEstimate: { minDays: 2, maxDays: 3, pincode: '560001', expressAvailable: true },
     reviews: []
+  },
+  {
+    id: 'prod-29',
+    sku: 'FSL-GRNT-WCH-29',
+    brand: 'Fossil',
+    name: 'Men Grant Chronograph Navy & Rose Gold Leather Watch',
+    category: 'Watches',
+    price: 9495,
+    mrp: 14995,
+    discountPct: 36,
+    rating: 4.8,
+    ratingCount: 3820,
+    images: [
+      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Roman numeral navy sunray chronograph dial with rose gold-tone stainless steel case, 44mm diameter, genuine leather strap, quartz movement, 5 ATM water resistance with 2-year official manufacturer warranty.',
+    availableSizes: [
+      { size: 'M', inStock: true, stockCount: 5 } // M represents 44mm standard dial
+    ],
+    availableColors: [
+      { name: 'Navy & Rose Gold', hex: '#1b2a4a', inStock: true, image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80' },
+      { name: 'Charcoal Black', hex: '#222222', inStock: true, image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80' }
+    ],
+    fabricDNA: {
+      material: 'Genuine Cowhide Leather Strap & Stainless Steel Case',
+      composition: '316L Surgical Grade Steel & Mineral Crystal Glass',
+      gsmWeight: 92,
+      opacityScore: 5.0,
+      opacityLabel: 'Scratch-Resistant Mineral Glass',
+      breathabilityScore: 4.5,
+      breathabilityLabel: '5 ATM Water Resistant (50 Meters)',
+      weaveType: 'Chronograph Movement with Stopwatch',
+      stretchRating: 'Quick-release 22mm interchangeable strap',
+      macroImages: ['https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80']
+    },
+    fitConsensus: {
+      trueToSizePct: 96,
+      totalVoters: 210,
+      runsSmallPct: 2,
+      trueToSizeCount: 202,
+      runsLargePct: 2,
+      fitAdvice: '44mm dial fits medium to broad wrists comfortably with 8 adjustment holes in genuine leather strap.',
+      recommendedSizeForUser: '44mm',
+      userHeightHistogram: [{ heightRange: 'All Profiles', runsSmallPct: 2, trueToSizePct: 96, runsLargePct: 2, voterCount: 210 }]
+    },
+    swapEligible: true,
+    deliveryEstimate: { minDays: 1, maxDays: 3, pincode: '560001', expressAvailable: true },
+    reviews: [
+      {
+        id: 'rev-w1',
+        userName: 'Rohan Deshmukh',
+        userHeight: "5'11\"",
+        purchasedSize: '44mm',
+        fitFeedback: 'True to Size',
+        comment: 'Original Fossil with 2-year warranty card registered online. The dark navy dial looks luxurious in sunlight.',
+        rating: 5,
+        date: '28 Aug 2026',
+        isVerifiedBuyer: true
+      }
+    ]
+  },
+  {
+    id: 'prod-30',
+    sku: 'TTN-RGA-WCH-30',
+    brand: 'Titan',
+    name: 'Women Raga Viva Mother of Pearl Rose Gold Watch',
+    category: 'Watches',
+    price: 4995,
+    mrp: 6995,
+    discountPct: 28,
+    rating: 4.7,
+    ratingCount: 5120,
+    images: [
+      'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Jewellery-inspired rose gold plated brass strap watch with genuine iridescent mother-of-pearl dial, Swarovski crystal indices, and water resistance up to 30m.',
+    availableSizes: [
+      { size: 'M', inStock: true, stockCount: 8 }
+    ],
+    availableColors: [
+      { name: 'Rose Gold', hex: '#b76e79', inStock: true, image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80' }
+    ],
+    fabricDNA: {
+      material: 'Rose Gold Ion-Plated Metal Mesh Strap',
+      composition: 'Genuine Mother of Pearl & Mineral Crystal',
+      gsmWeight: 54,
+      opacityScore: 5.0,
+      opacityLabel: 'Authentic Mother of Pearl Sheen',
+      breathabilityScore: 4.2,
+      breathabilityLabel: '3 ATM Water Resistance',
+      weaveType: 'Precision Quartz Movement',
+      stretchRating: 'Self-adjustable jewelry clasp',
+      macroImages: ['https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80']
+    },
+    fitConsensus: {
+      trueToSizePct: 94,
+      totalVoters: 340,
+      runsSmallPct: 3,
+      trueToSizeCount: 320,
+      runsLargePct: 3,
+      fitAdvice: 'Delicate 32mm case diameter, perfectly proportioned for slender and standard wrist profiles.',
+      recommendedSizeForUser: '32mm',
+      userHeightHistogram: [{ heightRange: 'All Profiles', runsSmallPct: 3, trueToSizePct: 94, runsLargePct: 3, voterCount: 340 }]
+    },
+    swapEligible: true,
+    deliveryEstimate: { minDays: 2, maxDays: 4, pincode: '560001', expressAvailable: true },
+    reviews: []
+  },
+  {
+    id: 'prod-31',
+    sku: 'CRC-CLS-CLG-31',
+    brand: 'Crocs',
+    name: 'Unisex Classic Lightweight Waterproof Clog Sandals',
+    category: 'Sandals',
+    price: 2495,
+    mrp: 3495,
+    discountPct: 28,
+    rating: 4.6,
+    ratingCount: 22100,
+    images: [
+      'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Iconic lightweight Croslite water-friendly clogs with ventilation ports, pivoting heel straps, and contoured arch support for all-day comfort.',
+    availableSizes: [
+      { size: 'M', inStock: true, stockCount: 14 } // UK 8
+    ],
+    availableColors: [
+      { name: 'Pure White', hex: '#ffffff', inStock: true, image: 'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=800&q=80' }
+    ],
+    fabricDNA: {
+      material: '100% Proprietary Croslite Foam Resin',
+      composition: 'Closed-Cell Waterproof Resin',
+      gsmWeight: 140,
+      opacityScore: 5.0,
+      opacityLabel: 'Waterproof & Odor Resistant',
+      breathabilityScore: 5.0,
+      breathabilityLabel: '13 Breathable Airflow Drainage Ports',
+      weaveType: 'Molded Dual Density Ergonomic Footbed',
+      stretchRating: 'Flexible shock-absorbing cushion',
+      macroImages: ['https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=800&q=80']
+    },
+    fitConsensus: {
+      trueToSizePct: 89,
+      totalVoters: 720,
+      runsSmallPct: 4,
+      trueToSizeCount: 641,
+      runsLargePct: 7,
+      fitAdvice: 'Roomy relaxed fit with spacious toe box. If between sizes, choose one size down.',
+      recommendedSizeForUser: 'UK 8',
+      userHeightHistogram: [{ heightRange: 'All Profiles', runsSmallPct: 4, trueToSizePct: 89, runsLargePct: 7, voterCount: 720 }]
+    },
+    swapEligible: true,
+    deliveryEstimate: { minDays: 1, maxDays: 3, pincode: '560001', expressAvailable: true },
+    reviews: []
+  },
+  {
+    id: 'prod-32',
+    sku: 'MTR-GLD-SND-32',
+    brand: 'Metro',
+    name: 'Women Shimmer Gold Block Heel Party Sandals',
+    category: 'Sandals',
+    price: 1890,
+    mrp: 2990,
+    discountPct: 36,
+    rating: 4.5,
+    ratingCount: 3400,
+    images: [
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80'
+    ],
+    description: 'Gold-toned synthetic metallic strap block heel sandals with padded memory foam insole, 2-inch stable heel, and buckle ankle strap.',
+    availableSizes: [
+      { size: 'S', inStock: true, stockCount: 6 } // UK 5
+    ],
+    availableColors: [
+      { name: 'Metallic Gold', hex: '#d4af37', inStock: true, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80' }
+    ],
+    fabricDNA: {
+      material: 'Metallic Synthetic Upper & TPR Anti-Slip Outsole',
+      composition: 'High-Grade Polyurethane & Memory Cushion',
+      gsmWeight: 210,
+      opacityScore: 5.0,
+      opacityLabel: 'Shimmer Metallic Finish',
+      breathabilityScore: 4.4,
+      breathabilityLabel: 'Open-Toe Breathable Comfort',
+      weaveType: '2-Inch Wide Sturdy Block Heel',
+      stretchRating: 'Ankle strap with 5-point buckle adjustment',
+      macroImages: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80']
+    },
+    fitConsensus: {
+      trueToSizePct: 92,
+      totalVoters: 180,
+      runsSmallPct: 5,
+      trueToSizeCount: 166,
+      runsLargePct: 3,
+      fitAdvice: 'True to standard Indian & UK shoe sizing with soft insole cushioning preventing ball-of-foot fatigue.',
+      recommendedSizeForUser: 'UK 6',
+      userHeightHistogram: [{ heightRange: 'All Profiles', runsSmallPct: 5, trueToSizePct: 92, runsLargePct: 3, voterCount: 180 }]
+    },
+    swapEligible: true,
+    deliveryEstimate: { minDays: 2, maxDays: 3, pincode: '560001', expressAvailable: true },
+    reviews: []
   }
 ];
