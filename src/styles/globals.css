@@ -1,0 +1,142 @@
+@import './variables.css';
+@import './animations.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a24;
+  font-family: var(--font-primary);
+  color: var(--myntra-text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(40, 44, 63, 0.2);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(40, 44, 63, 0.4);
+}
+
+/* Reset buttons and inputs */
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+}
+
+/* Myntra Standard Pill Button */
+.btn-myntra-primary {
+  background-color: var(--myntra-pink);
+  color: var(--myntra-bg-white);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(255, 63, 108, 0.25);
+}
+
+.btn-myntra-primary:hover {
+  background-color: var(--myntra-pink-hover);
+}
+
+.btn-myntra-primary:active {
+  background-color: var(--myntra-pink-active);
+  transform: scale(0.98);
+}
+
+.btn-myntra-ghost {
+  color: var(--myntra-text-primary);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.btn-myntra-ghost:hover {
+  color: var(--myntra-pink);
+}
+
+/* Responsive Desktop Device Frame container */
+.device-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  max-height: 932px;
+  background-color: var(--myntra-bg-white);
+  border-radius: 36px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 10px #2e2e38;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: max-width 300ms ease, max-height 300ms ease, border-radius 300ms ease;
+}
+
+@media (max-width: 500px) {
+  .device-viewport-wrapper {
+    max-width: 100vw !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}

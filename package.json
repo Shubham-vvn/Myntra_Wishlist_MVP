@@ -1,0 +1,30 @@
+{
+  "name": "myntra-wishlist-ai",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.7.8",
+    "@capacitor/cli": "^5.7.8",
+    "@capacitor/core": "^5.7.8",
+    "canvas-confetti": "^1.9.3",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.3"
+  }
+}

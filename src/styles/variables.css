@@ -1,0 +1,63 @@
+:root {
+  /* Myntra Brand Colors */
+  --myntra-pink: #ff3f6c;
+  --myntra-pink-hover: #e72754;
+  --myntra-pink-active: #d61845;
+  --myntra-pink-soft: #fff1f4;
+  --myntra-pink-border: #ffccd6;
+
+  /* Myntra Dark & Slate Neutrals */
+  --myntra-navy: #282c3f;
+  --myntra-text-primary: #282c3f;
+  --myntra-text-secondary: #535766;
+  --myntra-text-muted: #94969f;
+  --myntra-text-disabled: #bfc0c6;
+  
+  /* Borders & Backgrounds */
+  --myntra-border: #eaeaec;
+  --myntra-border-light: #f5f5f6;
+  --myntra-bg-light: #f5f5f6;
+  --myntra-bg-white: #ffffff;
+  --myntra-bg-card: #ffffff;
+  
+  /* Semantic Status Colors */
+  --myntra-success: #03a685;
+  --myntra-success-dark: #028066;
+  --myntra-success-light: #e6f7f4;
+  --myntra-success-border: #b3ebd9;
+  
+  --myntra-alert-orange: #ff5722;
+  --myntra-alert-red: #d32f2f;
+  --myntra-alert-light: #fff3e0;
+  
+  --myntra-info-blue: #1976d2;
+  --myntra-info-light: #e3f2fd;
+  
+  --myntra-gold: #f5a623;
+  --myntra-gold-light: #fff8e6;
+
+  /* Typography */
+  --font-primary: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 4px rgba(40, 44, 63, 0.08);
+  --shadow-md: 0 4px 16px rgba(40, 44, 63, 0.12);
+  --shadow-lg: 0 8px 30px rgba(40, 44, 63, 0.16);
+  --shadow-bottom-nav: 0 -2px 10px rgba(40, 44, 63, 0.08);
+  --shadow-modal: 0 -8px 32px rgba(40, 44, 63, 0.24);
+
+  /* Border Radii */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
