@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppStore } from '../../store/appStore';
+import { MyntraLogo } from '../common/MyntraLogo';
 import { ArrowLeft, Search, Heart, ShoppingBag, Bell } from 'lucide-react';
 
 interface TopBarProps {
@@ -57,27 +58,9 @@ export const TopBar: React.FC<TopBarProps> = ({ title, showBack, onBack }) => {
         ) : (
           <div 
             onClick={() => store.setActiveTab('home')}
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}
+            style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
           >
-            {/* Myntra Stylized Color M Logo */}
-            <svg width="28" height="24" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 70V10L35 48L50 25L65 48L88 10V70H74V34L59 58H41L26 34V70H12Z" fill="url(#myntra-gradient)" />
-              <defs>
-                <linearGradient id="myntra-gradient" x1="0" y1="0" x2="100" y2="80" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#FF3F6C" />
-                  <stop offset="0.5" stopColor="#FF905A" />
-                  <stop offset="1" stopColor="#F1557A" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <span style={{
-              fontSize: '17px',
-              fontWeight: 800,
-              letterSpacing: '-0.4px',
-              color: 'var(--myntra-navy)'
-            }}>
-              Myntra
-            </span>
+            <MyntraLogo width={28} height={22} showText={true} />
           </div>
         )}
       </div>
