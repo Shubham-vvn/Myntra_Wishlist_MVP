@@ -3,6 +3,7 @@
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.5.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel_Active-000000?logo=vercel&logoColor=white)](https://myntra-wishlist-mvp-iota.vercel.app/)
 [![Capacitor Android](https://img.shields.io/badge/Capacitor-Android_Native-119EFF?logo=capacitor&logoColor=white)](https://capacitorjs.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)]()
@@ -11,7 +12,12 @@
 
 ---
 
-## 📱 Live Demo & Device Frame
+## 🌐 Live Application Demo
+👉 **[Open Live App (iPhone 15 Pro Experience)](https://myntra-wishlist-mvp-iota.vercel.app/)**
+
+---
+
+## 📱 Interactive Device Frame & Features
 
 The application is rendered inside a **dedicated iPhone 15 Pro chassis** featuring:
 - 🏝️ **Dynamic Island** with interactive camera sensor and status indicators.
